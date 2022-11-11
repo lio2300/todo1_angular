@@ -1,0 +1,61 @@
+<form [formGroup]="formUser">
+    <h2 mat-dialog-title>{{data?'Editar Usuario':'Registrar Usuario'}}</h2>
+    <mat-dialog-content class="mat-typography">
+        <div class="row">
+            <mat-form-field class="col-12 col-sm-6" appearance="outline">
+                <mat-label>Nombre de Usuario</mat-label>
+                <input formControlName="user_name" matInput placeholder="Placeholder">
+                <mat-hint>Nombre de Usuario</mat-hint>
+                <mat-error *ngIf="formUser.get('user_name')?.errors && 
+                formUser.get('user_name')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-12 col-sm-6" appearance="outline">
+                <mat-label>Email</mat-label>
+                <input formControlName="user_email" matInput placeholder="Placeholder">
+                <mat-hint>Correo Electrónico del usuario</mat-hint>
+                <mat-error *ngIf="formUser.get('user_email')?.errors && 
+                formUser.get('user_email')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-12 col-sm-6" appearance="outline">
+                <mat-label>Nombres</mat-label>
+                <input formControlName="user_firstname" matInput placeholder="Placeholder">
+                <mat-hint>Nombres del Usuario</mat-hint>
+                <mat-error *ngIf="formUser.get('user_firstname')?.errors && 
+                formUser.get('user_firstname')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-12 col-sm-6" appearance="outline">
+                <mat-label>Apellidos</mat-label>
+                <input formControlName="user_lastname" matInput placeholder="Placeholder">
+                <mat-hint>Apellidos del Usuario</mat-hint>
+                <mat-error *ngIf="formUser.get('user_lastname')?.errors && 
+                formUser.get('user_lastname')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-form-field class="col-12 col-sm-6" appearance="outline">
+                <mat-label>DNI</mat-label>
+                <input formControlName="user_dni" matInput placeholder="Placeholder">
+                <mat-hint>Identificación del Usuario</mat-hint>
+                <mat-error *ngIf="formUser.get('user_dni')?.errors && 
+                formUser.get('user_dni')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+            <mat-form-field class="col-12 col-sm-6" appearance="outline">
+                <mat-label>Teléfono</mat-label>
+                <input formControlName="user_phone" matInput placeholder="Placeholder">
+                <mat-hint>Teléfono del Usuario</mat-hint>
+                <mat-error *ngIf="formUser.get('user_phone')?.errors && 
+                formUser.get('user_phone')?.hasError('required')">Este campo es requerido</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+            <mat-slide-toggle formControlName="user_status">{{formUser.get('user_status')?.value?'Activo':'Inactivo'}}
+            </mat-slide-toggle>
+        </div>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button mat-button [mat-dialog-close]="false">Cancelar</button>
+        <button type="submit" (click)="onSubmitUser()" mat-button cdkFocusInitial>Guardar</button>
+    </mat-dialog-actions>
+</form>

@@ -75,10 +75,10 @@ Install the Angular CLI globally:
 npm install -g @angular/cli
 ```
 
-Create workspace:
+Install Dependencies:
 
 ```
-ng new [PROJECT NAME]
+npm install
 ```
 
 Run the application:
@@ -89,6 +89,28 @@ ng serve
 ```
 
 Angular is cross-platform, fast, scalable, has incredible tooling, and is loved by millions.
+
+## Docker
+
+Docker is an open source project that automates the use of applications within software containers, it requires an additional capacity of abstraction and automation of application virtualization in multiple operating systems.
+
+Complied Docker
+
+```
+docker build -t todo1_angular .
+```
+
+Run Docker
+
+```
+docker run -d -it -p 80:80 todo1_angular
+```
+
+In your Browse
+
+```
+localhost
+```
 
 ## Quickstart
 
